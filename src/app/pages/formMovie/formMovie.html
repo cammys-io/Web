@@ -1,0 +1,99 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Agregar Película</h2>
+
+  <form (ngSubmit)="saveMovie()">
+    <!-- Póster -->
+    <div class="mb-3">
+      <label for="poster" class="form-label">Póster</label>
+      <input
+        [(ngModel)]="newMovie.poster_url"
+        type="text"
+        class="form-control"
+        id="poster"
+        name="poster_url"
+        accept="image/*"
+        required
+      />
+    </div>
+
+    <!-- Título -->
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input
+        [(ngModel)]="newMovie.title"
+        type="text"
+        class="form-control"
+        id="titulo"
+        name="title"
+        placeholder="Ej. Inception"
+        required
+      />
+    </div>
+
+    <!-- Sinopsis -->
+    <div class="mb-3">
+      <label for="sinopsis" class="form-label">Sinopsis</label>
+      <textarea
+        [(ngModel)]="newMovie.sinopsis"
+        class="form-control"
+        id="sinopsis"
+        name="sinopsis"
+        rows="4"
+        placeholder="Escribe una breve sinopsis de la película"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Género -->
+    <div class="mb-3">
+      <label for="genero" class="form-label">Género</label>
+      <select [(ngModel)]="newMovie.genre" class="form-select" id="genero" name="genre" required>
+        <option value="" disabled selected>Selecciona un género</option>
+        <option value="Acción">Acción</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Drama">Drama</option>
+        <option value="Terror">Terror</option>
+        <option value="Ciencia ficción">Ciencia ficción</option>
+        <option value="Animación">Animación</option>
+      </select>
+    </div>
+
+    <!-- Año de estreno -->
+    <div class="mb-3">
+      <label for="anio" class="form-label">Año de estreno</label>
+      <input
+        [(ngModel)]="newMovie.releaseYear"
+        type="number"
+        class="form-control"
+        id="anio"
+        name="releaseYear"
+        placeholder="Ej. 2024"
+        min="1900"
+        max="2100"
+        required
+      />
+    </div>
+
+    <!-- Calificación -->
+    <div class="mb-3">
+      <label for="calificacion" class="form-label">Calificación</label>
+      <input
+        [(ngModel)]="newMovie.rating"
+        type="number"
+        class="form-control"
+        id="calificacion"
+        name="rating"
+        placeholder="0 - 10"
+        min="0"
+        max="10"
+        step="0.1"
+        required
+      />
+    </div>
+
+    <!-- Botón -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary">Guardar Película</button>
+    </div>
+  </form>
+</div>
